@@ -8,8 +8,14 @@ class Calc:
     def __init__(self, limit):
         self.limit = limit
         self.records = []
+
     def add_record (self,Record):
         records.append(Record)
+
+    def get_today_stats(self):
+        date_now = dt.datetime.now().date()
+        sum_date = sum([elem.amount for elem in self.records if elem.date = date_now])
+        return sum_date
 
 class Record:
     def __init__(self, amount, comment, date = None):
@@ -21,5 +27,23 @@ class Record:
         else:
             self.date = dt.datetime.strptime(date, date_format).date()
 
-class CalorieCalc(Calc):
+class CaloriesCalculator(Calc):
+    def __init__(self, limit):
+        super().__init__(limit)
+        
+    def add_record (self,Record):
+        super().add_record(Record)
+    
+    def get_today_stats (self):
+        super().get_today_stats(self)
+
+class CashCalculator(Calc):
+    def __init__(self, limit):
+        super().__init__(limit)
+
+    def add_record (self,Record):
+        super().add_record(Record)
+
+    def get_today_stats (self):
+        super().get_today_stats(self)
     
