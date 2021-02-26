@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 26-Feb-2021 at 15:18:06 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 26-Feb-2021 at 16:57:06 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -259,8 +259,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.1</td></tr></table>
     <h2>Summary</h2>
-    <p>20 tests ran in 0.42 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">10 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">10 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>20 tests ran in 0.17 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">20 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -271,96 +271,6 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCaloriesCalculator::test_get_calories_remained</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCaloriesCalculator object at 0x03582910&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x037A1328&gt;, &lt;homework.Record object at 0x037A14D8&gt;, &lt;homework.Record object at 0x03582D4...object at 0x03582B98&gt;, &lt;homework.Record object at 0x037A1208&gt;, &lt;homework.Record object at 0x037A1448&gt;, ...], 900, 2400)<br/>negative_calories_remained = &#x27;Хватит есть!&#x27;<br/>positive_calories_remained = &lt;function positive_calories_remained.&lt;locals&gt;._positive_calories_remained at 0x03566E80&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x03799610&gt;<br/><br/>    def test_get_calories_remained(self, init_limit, data_records,<br/>                                   negative_calories_remained, positive_calories_remained, msg_err):<br/>        result = homework.CaloriesCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_calories_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_calories_remained&#x27;, &#x27;CaloriesCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        if today &lt; init_limit:<br/>&gt;           assert result.get_calories_remained() == positive_calories_remained(init_limit - today), \<br/>                msg_err(&#x27;wrong_method&#x27;, &#x27;get_calories_remained&#x27;, &#x27;CaloriesCalculator&#x27;)<br/><br/>tests\test_homework.py:106: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;homework.CaloriesCalculator object at 0x037A1640&gt;<br/><br/>    def get_calories_remained(self):<br/>&gt;       calories_left = self.limit - self.get_today_stats()<br/><span class="error">E       TypeError: unsupported operand type(s) for -: &#x27;int&#x27; and &#x27;NoneType&#x27;</span><br/><br/>homework.py:50: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[0-usd]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x038320A0&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x038323A0&gt;, &lt;homework.Record object at 0x03832B38&gt;, &lt;homework.Record object at 0x038325C...bject at 0x03832670&gt;, &lt;homework.Record object at 0x03832628&gt;, &lt;homework.Record object at 0x03832940&gt;, ...], 1050, 2400)<br/>amount = 0, currency = &#x27;usd&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x037B1970&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x037B1808&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x03832E80&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[0-eur]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x0381DE38&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x0381D7F0&gt;, &lt;homework.Record object at 0x0381DFA0&gt;, &lt;homework.Record object at 0x0381DBB...object at 0x0381D370&gt;, &lt;homework.Record object at 0x0381DF58&gt;, &lt;homework.Record object at 0x0381D2F8&gt;, ...], 900, 1650)<br/>amount = 0, currency = &#x27;eur&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x037B1D60&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x037B18E0&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0381D598&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[0-rub]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x037A1820&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x037A1DA8&gt;, &lt;homework.Record object at 0x03837550&gt;, &lt;homework.Record object at 0x037A1FD...bject at 0x037A17C0&gt;, &lt;homework.Record object at 0x03837808&gt;, &lt;homework.Record object at 0x037A1BB0&gt;, ...], 1500, 2700)<br/>amount = 0, currency = &#x27;rub&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x037B1A48&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x037B1A90&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x03837640&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[1-usd]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x03810238&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x03810700&gt;, &lt;homework.Record object at 0x038102F8&gt;, &lt;homework.Record object at 0x038105E...bject at 0x03810610&gt;, &lt;homework.Record object at 0x038109A0&gt;, &lt;homework.Record object at 0x03810A18&gt;, ...], 1050, 1800)<br/>amount = 1, currency = &#x27;usd&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x037B1CD0&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x037B1DA8&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x03810B20&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[1-eur]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x037A1778&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x0381D490&gt;, &lt;homework.Record object at 0x0381D850&gt;, &lt;homework.Record object at 0x0381D44...object at 0x0381D700&gt;, &lt;homework.Record object at 0x0381DC70&gt;, &lt;homework.Record object at 0x0381DD48&gt;, ...], 750, 2250)<br/>amount = 1, currency = &#x27;eur&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x037B19B8&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x037B17C0&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0381DB08&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[1-rub]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x03832F40&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x038324D8&gt;, &lt;homework.Record object at 0x038324C0&gt;, &lt;homework.Record object at 0x038323B...object at 0x03832E50&gt;, &lt;homework.Record object at 0x038324F0&gt;, &lt;homework.Record object at 0x03832298&gt;, ...], 750, 1650)<br/>amount = 1, currency = &#x27;rub&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x03811610&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x03811028&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x03832460&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[-1-usd]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x038376B8&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x03839B08&gt;, &lt;homework.Record object at 0x03837F88&gt;, &lt;homework.Record object at 0x03837A9...bject at 0x03837580&gt;, &lt;homework.Record object at 0x03839A18&gt;, &lt;homework.Record object at 0x03837E50&gt;, ...], 1350, 2700)<br/>amount = -1, currency = &#x27;usd&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x03811340&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x03811148&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x038393E8&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[-1-eur]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x0384A178&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x0384A8E0&gt;, &lt;homework.Record object at 0x0384A868&gt;, &lt;homework.Record object at 0x0384AEE...bject at 0x0384A778&gt;, &lt;homework.Record object at 0x0384AC28&gt;, &lt;homework.Record object at 0x0384A5E0&gt;, ...], 1350, 2850)<br/>amount = -1, currency = &#x27;eur&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x037B1B20&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x03811190&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0384AB20&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[-1-rub]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_homework.TestCashCalculator object at 0x037A1760&gt;, init_limit = 2500<br/>data_records = ([&lt;homework.Record object at 0x0383BBC8&gt;, &lt;homework.Record object at 0x0383B658&gt;, &lt;homework.Record object at 0x0383BF2...bject at 0x0383B628&gt;, &lt;homework.Record object at 0x0383BB68&gt;, &lt;homework.Record object at 0x0383B3A0&gt;, ...], 1350, 2850)<br/>amount = -1, currency = &#x27;rub&#x27;, today_cash_remained = &lt;function today_cash_remained.&lt;locals&gt;._today_cash_remained at 0x03811028&gt;<br/>msg_err = &lt;function msg_err.&lt;locals&gt;._msg_err at 0x03811B68&gt;, monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0383B3D0&gt;<br/><br/>    @pytest.mark.parametrize(&quot;amount,currency&quot;, [<br/>        (0, &#x27;usd&#x27;), (0, &#x27;eur&#x27;), (0, &#x27;rub&#x27;),<br/>        (1, &#x27;usd&#x27;), (1, &#x27;eur&#x27;), (1, &#x27;rub&#x27;),<br/>        (-1, &#x27;usd&#x27;), (-1, &#x27;eur&#x27;), (-1, &#x27;rub&#x27;)<br/>    ])<br/>    def test_get_today_cash_remained(self, init_limit, data_records, amount, currency, today_cash_remained, msg_err,<br/>                                     monkeypatch):<br/>    <br/>        result = homework.CashCalculator(init_limit)<br/>        assert hasattr(result, &#x27;get_today_cash_remained&#x27;), \<br/>            msg_err(&#x27;add_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/>    <br/>        records, today, week = data_records<br/>        for record in records:<br/>            result.add_record(record)<br/>    <br/>        result.EURO_RATE = 70<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;EURO_RATE&quot;, 70)<br/>        result.USD_RATE = 60<br/>        monkeypatch.setattr(homework.CashCalculator, &quot;USD_RATE&quot;, 60)<br/>        result.limit = today + (amount * 300)<br/>&gt;       assert re.fullmatch(today_cash_remained(amount, currency), result.get_today_cash_remained(currency)), \<br/>            msg_err(&#x27;wrong_method&#x27;, &#x27;get_today_cash_remained&#x27;, &#x27;CashCalculator&#x27;)<br/><span class="error">E       TypeError: get_today_cash_remained() takes 1 positional argument but 2 were given</span><br/><br/>tests\test_homework.py:159: TypeError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
@@ -445,7 +355,97 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCaloriesCalculator::test_get_calories_remained</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
           <td class="col-name">tests/test_homework.py::TestCashCalculator::test_init</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[0-usd]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[0-eur]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[0-rub]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[1-usd]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[1-eur]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[1-rub]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[-1-usd]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[-1-eur]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_homework.py::TestCashCalculator::test_get_today_cash_remained[-1-rub]</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
