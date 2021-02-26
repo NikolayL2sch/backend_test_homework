@@ -16,6 +16,12 @@ class Calc:
         date_now = dt.datetime.now().date()
         sum_date = sum([elem.amount for elem in self.records if elem.date = date_now])
         return sum_date
+    
+    def get_week_stats(self):
+        date_now = dt.datetime.now().date()
+        tmp = [date_now - dt.timedelta(days = i) for i in range (7)]
+        sum_week = sum([elem.amount for elem in self.records if elem.date in tmp])
+        return sum_week
 
 class Record:
     def __init__(self, amount, comment, date = None):
@@ -30,12 +36,15 @@ class Record:
 class CaloriesCalculator(Calc):
     def __init__(self, limit):
         super().__init__(limit)
-        
+
     def add_record (self,Record):
         super().add_record(Record)
     
     def get_today_stats (self):
         super().get_today_stats(self)
+    
+    def get_week_stats (self):
+        super().get_week_stats(self)
 
 class CashCalculator(Calc):
     def __init__(self, limit):
@@ -47,3 +56,9 @@ class CashCalculator(Calc):
     def get_today_stats (self):
         super().get_today_stats(self)
     
+    def get_week_stats (self):
+        super().get_week_stats(self)
+    
+    def get_today_cash_remained(currency):
+        money_left = self.limit - get_today_stats()
+        
