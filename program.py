@@ -14,7 +14,7 @@ class Calc:
 
     def get_today_stats(self):
         date_now = dt.datetime.now().date()
-        sum_date = sum([elem.amount for elem in self.records if elem.date = date_now])
+        sum_date = sum([elem.amount for elem in self.records if elem.date == date_now])
         return sum_date
     
     def get_week_stats(self):
@@ -46,6 +46,13 @@ class CaloriesCalculator(Calc):
     def get_week_stats (self):
         super().get_week_stats(self)
 
+    def get_calories_remained():
+        calories_left = self.limit - get_today_stats()
+        if calories_left > 0:
+            print(f'Сегодня можно съесть что-нибудь ещё, но с общей калорийностью не более {calories_left} кКал')
+        else:
+            print('Хватит есть!')
+
 class CashCalculator(Calc):
     def __init__(self, limit):
         super().__init__(limit)
@@ -61,4 +68,20 @@ class CashCalculator(Calc):
     
     def get_today_cash_remained(currency):
         money_left = self.limit - get_today_stats()
-        
+        USD_RATE = 74.36
+        EURO_RATE = 90.29
+        if currency == 'usd':
+            money_left = round(money_left/USD_RATE,2)
+            currency = 'USD'
+        elif currency == 'euro':
+            money_left = round(money_left/EURO_RATE,2)
+            currency = 'Euro'
+        else:
+            money_left = round(money_left,2)
+            currency = 'руб'
+        if money_left > 0:
+            print(f'На сегодня осталось {money_left} {currency}')
+        elif money_left == 0:
+            print('Денег нет, держись')
+        else:
+            print(f'Денег нет, держись: твой долг - {abs(money_left)} {currency}')
